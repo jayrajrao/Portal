@@ -1,0 +1,334 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+  
+    <title>Admission Portal</title>
+  
+    <!-- Fontawesome  link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  
+    <!-- Custom styles for this template -->
+    <link href="/assets/css/styles.css" rel="stylesheet">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  
+    <!-- <link href="/public/assets/js/bootstrap.bundle.js" rel="stylesheet"> -->
+    <script>
+      function myFunction() {
+          var x = document.getElementById("myInput");
+          if (x.type === "password") {
+              x.type = "text";
+          } else {
+              x.type = "password";
+          }
+      }
+  </script>
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-expand-md header fixed-top ps-4 pt-1 p-0">
+      <div class="container-fluid p-0">
+        <a href="" class="navbar-brand">
+          <!--Desktop logo-->
+          </a><a href="/dashboard">
+            <img src="/assets/images/logo.png" width="120px" class="desk_logo">
+          </a>
+          <!--Mobile logo-->
+          <a href="/dashboard">
+            <img src="/assets/images/logo.png" class="mob_logo" width="120px">
+          </a>
+        
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#pn">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="pn">
+          <ul class="navbar-nav ms-auto text-uppercase">
+            <li><a href="/dashboard" class="nav-link">Home</a></li>
+            <li><a href="/about" class="nav-link">About</a></li>
+            <li><a href="/contact" class="nav-link">Contact</a></li>
+            <li><a href="/logout" class="nav-link">Logout</a></li>
+            <li><a href="#" class="nav-link user" data-bs-toggle="modal" data-bs-target="#add">Jayraj rao</a></li>
+          </ul>
+          <img src="https://res.cloudinary.com/dqowaxfln/image/upload/v1674924525/Profile_pictures/jyju1afuezczm7st2fx7.jpg" width="100px" height="100px" alt="...." class="me-3">
+        </div>
+  
+      </div>
+      <!--container-fluid end -->
+    </nav> <!-- Navbar -->
+  
+    <form action="/Change_password" method="post" enctype="multipart/form-data">
+      <div class="modal fade" id="add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="mb-3">
+                          <label class="form-label">Old Password</label>
+                          <input type="password" class="form-control" placeholder="Enter Old password" name="old_password" required="">
+                      </div>
+                      <div class="mb-3">
+                          <label class="form-label">New Password</label>
+                          <input type="password" class="form-control mb-2" placeholder="Enter New Password" name="new_password" id="myInput" required="">
+                              <input type="checkbox" onclick="myFunction()"><span>&nbsp;Show Password</span>
+                      </div>
+                      <div class="mb-3">
+                          <label class="form-label">Confirm Password</label>
+                          <input type="password" class="form-control" placeholder="Enter Confirm Password" name="confirm_password" required="">
+                      </div>
+                  </div>
+  
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    
+                    </div>
+              </div>
+          </div>
+      </div>
+  </form>
+  
+  
+  
+  <section id="registration">
+      <div class="container">
+          <h1 class="text-center pt-5">B.Tech Registration Form</h1>
+          <h1 class="text-center text-uppercase pb-2" style="color:#ed5a25;">Do Register!</h1>
+          <p class="text-center" style="color: #fff; background-color: #35b9dd;">In Case any query, Kindly Contact: 7974978812</p>
+          <div class="row">
+              <div class="col-lg-6">
+                  <!-- Slider Div start -->
+                  <div class="carousel slide" data-bs-ride="carousel" id="a">
+  
+                      <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#a" data-bs-slide-to="0" class=""></button>
+                          <button type="button" data-bs-target="#a" data-bs-slide-to="1" class=""></button>
+                          <button type="button" data-bs-target="#a" data-bs-slide-to="2" class="active" aria-current="true"></button>
+                      </div>
+  
+                      <div class="carousel-inner">
+                          <div class="carousel-item" data-bs-interval="4000">
+  
+                              <img src="/assets/images/registration_form1.jpg" width="100%" height="700px" alt="..." style="background-position:center;">
+                              <div class="carousel-caption">
+  
+                              </div>
+                              <!--carousel-caption-->
+                          </div>
+  
+                          <div class="carousel-item" data-bs-interval="2000">
+  
+                              <img src="/assets/images/registration_form2.jpg" width="100%" height="700px" alt="..." style="background-position:center;">
+                              <div class="carousel-caption">
+  
+                              </div>
+                              <!--carousel-caption-->
+                          </div>
+  
+                          <div class="carousel-item active" data-bs-interval="2000">
+  
+                              <img src="/assets/images/registration_form3.jpg" width="100%" height="700px" alt="..." style="background-position:center;">
+                              <div class="carousel-caption">
+  
+                              </div>
+                              <!--carousel-caption-->
+                          </div>
+                      </div>
+                      <!--carousel-inner-->
+  
+                      <button class="carousel-control-prev" type="button" data-bs-target="#a" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon"></span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#a" data-bs-slide="next">
+                          <span class="carousel-control-next-icon"></span>
+                      </button>
+                  </div>
+  
+              </div><!-- Slider Div end -->
+  
+              <div class="col-lg-6">
+                  <form action="/register/update/63de4411702c4997ff35a06f" method="post" enctype="multipart/form-data">
+                      <div class="mb-3 mt-1">
+                          <label class="mb-2">Username:</label>
+                          <input type="text" name="name" value="Jayraj rao" class="form-control enter_name" placeholder="Enter name" style="border:1px solid #35b9dd">
+                      </div>
+                      <div class="mb-3">
+                          <label class="mb-2">Email:</label>
+                          <input type="email" name="email" value="jayrajrao15@gmail.com" class="form-control" placeholder="Enter Email" style="border-radius: 25px; border:1px solid #35b9dd">
+                      </div>
+                      <div class="mb-3">
+                          <label class="mb-2">Mobile No.</label>
+                          <input type="number" name="number" value="53511268912" class="form-control" placeholder="Enter Mobile Number" style="border-radius: 25px; border:1px solid #35b9dd">
+                      </div>
+                      <div class="mb-3">
+                          <label class="mb-2">D.O.B:</label>
+                          <input type="date" name="dob" value="1998-02-01" class="form-control" style="border-radius: 25px; border:1px solid #35b9dd;">
+                      </div>
+                      <div class="mb-3 ">
+                          <label class="mb-2">Gender</label>
+                          <br>
+                          <input type="radio" name="gender" value="male" checked="">&nbsp;Male
+                          <input type="radio" name="gender" value="female">&nbsp;Female
+                          <br>
+                      </div>
+                      <div class="mb-3">
+                          <label>Address:</label>
+                          <textarea class="form-control" name="address" style="border-radius: 25px; border:1px solid #35b9dd">5 Mahesh nagar ratlam mp
+  Mahesh nagar near devra dev na</textarea>
+                      </div>
+                      <div class="mb-3">
+                          <label>Select College</label>
+                          <select class="form-control" name="college" value="MITS" style="border-radius: 25px; border:1px solid #35b9dd">
+                              <option>Select</option>
+                              <option selected="">MITS</option>
+                              <option>RJIT</option>
+                              <option>ITM</option>
+                              <option>NITM</option>
+                          </select>
+                      </div>
+                      <div class="mb-3">
+                          <label>Course</label>
+                          <select class="form-control" name="course" value="B.Tech" style="border-radius: 25px; border:1px solid #35b9dd">
+                              <option>Select</option>
+                              <option>B.Tech</option>
+                              <option>MCA</option>
+                              <option>BCA</option>
+                              <option>B.S.C</option>
+                              <option>Other</option>
+                          </select>
+                      </div>
+                      <div class="mb-3">
+                          <label>Branch</label>
+                          <select class="form-control" name="branch" value="CSE" style="border-radius: 25px; border:1px solid #35b9dd">
+                              <option>Select</option>
+                              <option selected="">CSE</option>
+                              <option>IT</option>
+                              <option>EC</option>
+                              <option>ET</option>
+                              <option>ME</option>
+                              <option>EE</option>
+                          </select>
+                      </div>
+                      <div class="text-center ">
+                          <button class="btn my-4" style="background-color: #35b9dd; color:#fff;" type="submit">Submit</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+    <!-- Footer Section start -->
+    <div class="container-fluid p-0 footer pt-4">
+      <footer class="text-white text-center text-lg-start">
+        <!-- Grid container -->
+        <div class="container p-4">
+          <!--Grid row-->
+          <div class="row mt-4">
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-4 block_title"><span>ABOUT US</span></h5>
+   
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio
+              </p>
+  
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </p>
+  
+              <div class="mt-4">
+  
+                <a type="button" class="btn btn-floating  btn-lg" style="background: #35b9dd; color:white;" href="https://www.facebook.com/harshit.sahu.5648/"><i class="fab fa-facebook-f"></i></a>
+                <!-- Facebook -->
+                <a type="button" class="btn btn-floating  btn-lg" style="background: #35b9dd; color:white;"><i class="fa-brands fa-instagram"></i></a>
+                <!-- Instagram -->
+                <a type="button" class="btn btn-floating  btn-lg" style="background: #35b9dd; color:white;" href="https://twitter.com/Harshit64946181"><i class="fab fa-twitter"></i></a>
+                <!-- Twitter -->
+                <a type="button" class="btn btn-floating  btn-lg" style="background: #35b9dd; color:white;" href="https://www.linkedin.com/in/himanshu-sahu-b9463a17a/"><i class="fa-brands fa-linkedin"></i></a>
+                <!-- Linkedin -->
+              </div>
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0 ">
+              <h5 class="text-uppercase mb-4 pb-1 block_title"><span>CONTACT</span></h5>
+  
+              <ul class="fa-ul" style="margin-left: 1.65em;">
+                <li class="mb-3">
+                  <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">Gole ka mandir, Station road</span>
+                </li>
+                <li class="mb-3">
+                  <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">admissionmits@gmail.com</span>
+                </li>
+                <li class="mb-3">
+                  <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+91 8871482503 </span>
+                </li>
+                <li class="mb-3">
+                  <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">+91 8871482503</span>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-4 block_title"><span>Opening hours</span></h5>
+  
+              <table class="table text-center text-white">
+                <tbody class="font-weight-normal">
+                  <tr>
+                    <td>Mon - Thu:</td>
+                    <td>8am - 9pm</td>
+                  </tr>
+                  <tr>
+                    <td>Fri - Sat:</td>
+                    <td>8am - 1pm</td>
+                  </tr>
+                  <tr>
+                    <td>Sunday:</td>
+                    <td>9am - 10pm</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+  
+        <!-- Copyright section -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2022 Copyright:
+          <a class="text-white" href="https://www.linkedin.com/in/himanshu-sahu-b9463a17a/">Himanshu sahu</a>
+        </div><!-- Copyright -->
+      </footer>
+  
+    </div><!-- Container-fluid end -->
+    <!-- Footer Section end -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  
+  
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/main.js"></script>
+  
+  </body></html>

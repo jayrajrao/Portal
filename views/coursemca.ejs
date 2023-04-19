@@ -1,0 +1,213 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+  
+    <title>Admission Portal</title>
+  
+    <!-- Fontawesome  link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  
+    <!-- Custom styles for this template -->
+    <link href="/assets/css/styles.css" rel="stylesheet">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  
+    <!-- <link href="/public/assets/js/bootstrap.bundle.js" rel="stylesheet"> -->
+    <script>
+      function myFunction() {
+          var x = document.getElementById("myInput");
+          if (x.type === "password") {
+              x.type = "text";
+          } else {
+              x.type = "password";
+          }
+      }
+  </script>
+  </head>
+  
+  <body>
+    <%- include("./header.ejs") %>
+  
+    <form action="/Change_password" method="post" enctype="multipart/form-data" style="padding-top: 5%;">
+      <div class="modal fade" id="add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="mb-3">
+                          <label class="form-label">Old Password</label>
+                          <input type="password" class="form-control" placeholder="Enter Old password" name="old_password" required="">
+                      </div>
+                      <div class="mb-3">
+                          <label class="form-label">New Password</label>
+                          <input type="password" class="form-control mb-2" placeholder="Enter New Password" name="new_password" id="myInput" required="">
+                              <input type="checkbox" onclick="myFunction()"><span>&nbsp;Show Password</span>
+                      </div>
+                      <div class="mb-3">
+                          <label class="form-label">Confirm Password</label>
+                          <input type="password" class="form-control" placeholder="Enter Confirm Password" name="confirm_password" required="">
+                      </div>
+                  </div>
+  
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    
+                    </div>
+              </div>
+          </div>
+      </div>
+  </form>
+  
+  
+  
+  <section id="registration">
+      <div class="container">
+          <h1 class="text-center pt-5">MCA Registration Form</h1>
+          <h1 class="text-center text-uppercase pb-2" style="color:#ed5a25;">Do Register!</h1>
+          <p class="text-center" style="color: #fff; background-color: #35b9dd;">In Case any query, Kindly Contact: 7974978812</p>
+          <div class="row">
+              <div class="col-lg-6">
+                  <!-- Slider Div start -->
+                  <div class="carousel slide" data-bs-ride="carousel" id="a">
+  
+                      <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#a" data-bs-slide-to="0" class="active"></button>
+                          <button type="button" data-bs-target="#a" data-bs-slide-to="1"></button>
+                          <button type="button" data-bs-target="#a" data-bs-slide-to="2"></button>
+                      </div>
+  
+                      <div class="carousel-inner">
+                          <div class="carousel-item active " data-bs-interval="4000">
+  
+                              <img src="/assets/images/registration_form1.jpg" width="100%" height="700px" alt="..." style="background-position:center;">
+                              <div class="carousel-caption">
+  
+                              </div>
+                              <!--carousel-caption-->
+                          </div>
+  
+                          <div class="carousel-item" data-bs-interval="2000">
+  
+                              <img src="/assets/images/registration_form2.jpg" width="100%" height="700px" alt="..." style="background-position:center;">
+                              <div class="carousel-caption">
+  
+                              </div>
+                              <!--carousel-caption-->
+                          </div>
+  
+                          <div class="carousel-item" data-bs-interval="2000">
+  
+                              <img src="/assets/images/registration_form3.jpg" width="100%" height="700px" alt="..." style="background-position:center;">
+                              <div class="carousel-caption">
+  
+                              </div>
+                              <!--carousel-caption-->
+                          </div>
+                      </div>
+                      <!--carousel-inner-->
+  
+                      <button class="carousel-control-prev" type="button" data-bs-target="#a" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon"></span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#a" data-bs-slide="next">
+                          <span class="carousel-control-next-icon"></span>
+                      </button>
+                  </div>
+                
+              </div><!-- Slider Div end -->
+              <div class="col-lg-6">
+                  <form action="/register/mca" method="post" enctype="multipart/form-data">
+                      <div class="mb-3 mt-1">
+                          <label class="mb-2">Username:</label>
+                          <input required type="text" name="name" value="" class="form-control enter_name" placeholder="Enter name" style="border:1px solid #35b9dd">
+                      </div>
+                      <div class="mb-3">
+                          <label class="mb-2">Email:</label>
+                          <input required type="email" name="email" value="" class="form-control" placeholder="Enter Email" style="border-radius: 25px; border:1px solid #35b9dd">
+                      </div>
+                      <div class="mb-3">
+                          <label class="mb-2">Mobile No.</label>
+                          <input required type="number" name="number" class="form-control" placeholder="Enter Mobile Number" style="border-radius: 25px; border:1px solid #35b9dd">
+                      </div>
+                      <div class="mb-3">
+                          <label class="mb-2">D.O.B:</label>
+                          <input required type="date" name="dob" class="form-control" style="border-radius: 25px; border:1px solid #35b9dd;">
+                      </div>
+                      <div class="mb-3 ">
+                          <label class="mb-2">Gender</label>
+                          <br>
+                          <input required type="radio" name="gender" value="male">&nbsp;Male
+                          <input required type="radio" name="gender" value="female">&nbsp;Female
+                          <br>
+                      </div>
+                      <div class="mb-3">
+                          <label>Address:</label>
+                          <textarea class="form-control" name="address" style="border-radius: 25px; border:1px solid #35b9dd"></textarea>
+                      </div>
+                      <div class="mb-3">
+                          <label>Select College</label>
+                          <select required name="college" class="form-control" style="border-radius: 25px; border:1px solid #35b9dd">
+                              <option>Select</option>
+                              <option>MITS</option>
+                              <option>RJIT</option>
+                              <option>ITM</option>
+                              <option>NITM</option>
+                          </select>
+                      </div>
+                      <div class="mb-3">
+                          <label>Course</label>
+                          <select required name="course" class="form-control" style="border-radius: 25px; border:1px solid #35b9dd">
+                              <option>Select</option>
+                              <option>MCA</option>
+                          </select>
+                      </div>
+                      <div class="mb-3">
+                          <label>Branch</label>
+                          <select required name="branch" class="form-control" style="border-radius: 25px; border:1px solid #35b9dd">
+                              <option>Select</option>
+                              <option>CSE</option>
+                              <option>IT</option>
+                          </select>
+                      </div>
+                      <div class="text-center ">
+                          <button class="btn my-4" style="background-color: #35b9dd; color:#fff;" type="submit">Submit</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+           
+      </div>
+  
+  </section>
+  
+  <%- include("./footer.ejs") %>
+ 
+     
+  
+    </div><!-- Container-fluid end -->
+    <!-- Footer Section end -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  
+  
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/main.js"></script>
+  
+  </body></html>

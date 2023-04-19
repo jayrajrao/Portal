@@ -1,0 +1,124 @@
+<%- include("header.ejs") %>
+<form action="/Change_password" method="post" enctype="multipart/form-data" style="padding-top: 5%;">
+  <div class="modal fade" id="add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+            
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <div class="mb-3">
+                      <label class="form-label">Old Password</label>
+                      <input type="password" class="form-control" placeholder="Enter Old password" name="old_password" required="">
+                  </div>
+                  <div class="mb-3">
+                      <label class="form-label">New Password</label>
+                      <input type="password" class="form-control mb-2" placeholder="Enter New Password" name="new_password" id="myInput" required="">
+                          <input type="checkbox" onclick="myFunction()"><span>&nbsp;Show Password</span>
+                  </div>
+                  <div class="mb-3">
+                      <label class="form-label">Confirm Password</label>
+                      <input type="password" class="form-control" placeholder="Enter Confirm Password" name="confirm_password" required="">
+                  </div>
+              </div>
+
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                
+                </div>
+          </div>
+      </div>
+  </div>
+</form>
+
+<!--slider div start-->
+<div class="carousel slide dashpage" data-bs-ride="carousel" id="a">
+      <div class="carousel-indicators">
+          <button type="button" data-bs-target="#a" data-bs-slide-to="0" class=""></button>
+          <button type="button" data-bs-target="#a" data-bs-slide-to="1" class=""></button>
+          <button type="button" data-bs-target="#a" data-bs-slide-to="2" class=""></button>
+          <button type="button" data-bs-target="#a" data-bs-slide-to="3" class="active" aria-current="true"></button>
+          <button type="button" data-bs-target="#a" data-bs-slide-to="4" class=""></button>
+      </div>
+
+      <div class="carousel-inner">
+          <div class="carousel-item" data-bs-interval="4000">
+              <img src="https://images.pexels.com/photos/915972/pexels-photo-915972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="w-100 " height="400px" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+              <img src="https://images.pexels.com/photos/915972/pexels-photo-915972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="w-100 " height="400px" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+              <img src="https://images.pexels.com/photos/915972/pexels-photo-915972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="w-100 " height="400px" alt="...">
+          </div>
+          <div class="carousel-item active" data-bs-interval="2000">
+              <img src="https://images.pexels.com/photos/915972/pexels-photo-915972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="w-100 " height="400px" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+              <img src="https://images.pexels.com/photos/915972/pexels-photo-915972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="w-100 " height="400px" alt="...">
+          </div>
+      </div>
+      <!--carousel-inner-->
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#a" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#a" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+      </button>
+  </div>
+  <!-- ================================================================ -->
+  <div class="container mb-5 text-center">
+      <h1 class="course_heading mt-5">Hello Jayraj rao
+      </h1>
+      <h2 class="course_heading my-3">Register Your Course</h2>
+      <p class="course_para text-center mb-5">Course Registration means the official recording of a student's name to
+          study a course or courses.</p>
+      <div class="row">
+
+          <div class="col-md-4 mb-5">
+              <div class="card card1">
+                  <img class="card-img-top" height="200px" width="300px" src="/assets/images/card_image1.jpg" alt="Card image cap">
+                  <div class="card-body">
+                      <h5 class="card-title ">B.Tech</h5>
+                      <p class="card-text">B.Tech is a professional undergraduate engineering degree</p>
+                      
+                              <a href="/coursebtech" class="btn cors">Register</a>
+                              
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+              <div class="card card2">
+                  <img class="card-img-top " height="200px!important" width="300px!important" src="/assets/images/card_image2.jpg" alt="Card image cap">
+                  <div class="card-body">
+                      <h5 class="card-title ">BCA</h5>
+                      <p class="card-text">BCA is a three-year Bachelor's Degree in Computer Application </p>
+                      
+                              <a href="/coursebca" class="btn cors">Register</a>
+                              
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+              <div class="card card3">
+                  <img class="card-img-top " height="200px" width="300px" src="/assets/images/card_image3.jpg" alt="Card image cap">
+                  <div class="card-body">
+                      <h5 class="card-title ">MCA</h5>
+                      <p class="card-text">MCA is a professional post-graduation degree in computer science</p>
+                      
+                              <a href="/coursemca" class="btn cors">Register</a>
+                              
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+<%- include("footer.ejs") %>

@@ -70,6 +70,7 @@ index.get("/register", FrontController.register);
 
 
 //login register panel
+index.get("/", UserController.login);
 index.get("/login", UserController.login);
 index.post("/verify_login", UserController.verifylogin);
 index.get("/registeruser", UserController.registeruser);

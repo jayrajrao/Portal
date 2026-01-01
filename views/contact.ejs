@@ -1,0 +1,184 @@
+<%- include("header.ejs") %>
+
+<!-- Contact Hero -->
+<section class="contact-hero">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-7">
+        <p class="text-uppercase small fw-semibold text-warning mb-2">
+          Contact Us
+        </p>
+        <h1 class="fw-bold mb-3 text-white">
+          We’re here to help you with your admission queries.
+        </h1>
+        <p class="lead text-light mb-0">
+          Reach out to the administration team for support related to courses,
+          applications or the admission process.
+        </p>
+      </div>
+   <div class="col-lg-5">
+  <div class="contact-hero-card shadow-sm">
+    <h6 class="mb-2">Need quick help?</h6>
+
+    <p class="small mb-1">
+      <i class="fa-solid fa-envelope me-2 text-primary"></i>
+      Email: <b>admissions@example.edu</b>
+    </p>
+
+    <p class="small mb-1">
+      <i class="fa-solid fa-phone me-2 text-success"></i>
+      Helpline: <b>+91 98765 43210</b>
+    </p>
+
+    <p class="small mb-0">
+      <i class="fa-solid fa-clock me-2 text-warning"></i>
+      Working hours: <b>Mon – Sat, 9:00 AM – 6:00 PM</b>
+    </p>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Contact Content -->
+<section class="py-5 contact-section">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Contact info -->
+      <div class="col-lg-5">
+        <div class="contact-info-card shadow-sm">
+          <h4 class="fw-bold mb-3">Get in touch</h4>
+          <p class="text-muted small mb-3">
+            If you have any questions about course selection, application status
+            or eligibility, feel free to write to us or call the helpdesk.
+          </p>
+
+          <div class="mb-3">
+            <h6 class="fw-semibold mb-1">
+              <i class="fa-solid fa-location-dot me-2 text-danger"></i>
+              Campus Address
+            </h6>
+            <p class="text-muted small mb-0">
+              Gole ka Mandir, Station Road<br>
+              Gwalior, Madhya Pradesh, India
+            </p>
+          </div>
+
+          <div class="mb-3">
+            <h6 class="fw-semibold mb-1">
+              <i class="fa-solid fa-envelope me-2 text-primary"></i>
+              Email
+            </h6>
+            <p class="text-muted small mb-0">
+              admissions@example.edu<br>
+              support@example.edu
+            </p>
+          </div>
+
+          <div class="mb-3">
+            <h6 class="fw-semibold mb-1">
+              <i class="fa-solid fa-phone me-2 text-success"></i>
+              Phone
+            </h6>
+            <p class="text-muted small mb-0">
+              +91 98765 43210<br>
+              +91 99887 66554
+            </p>
+          </div>
+
+          <div class="mb-0">
+            <h6 class="fw-semibold mb-1">
+              <i class="fa-solid fa-clock me-2 text-warning"></i>
+              Office hours
+            </h6>
+            <p class="text-muted small mb-0">
+              Monday – Saturday: 9:00 AM – 6:00 PM<br>
+              Sunday: Closed
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact form -->
+      <div class="col-lg-7">
+        <div class="contact-form-card shadow-sm">
+          <h4 class="fw-bold mb-3">Send us a message</h4>
+          <p class="text-muted small mb-4">
+            Fill in the form below and our team will get back to you at the earliest.
+          </p>
+
+          <!-- You can later wire this POST to a route like /contact -->
+          <form action="/contact" method="post">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label small fw-semibold">Full Name</label>
+                <input type="text" name="name" class="form-control form-control-sm" placeholder="Enter your name" required>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label small fw-semibold">Email</label>
+                <input type="email" name="email" class="form-control form-control-sm" placeholder="Enter your email" required>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label small fw-semibold">Mobile Number</label>
+                <input type="text" name="phone" class="form-control form-control-sm" placeholder="Enter your number" required>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label small fw-semibold">Query Type</label>
+                <select name="type" class="form-select form-select-sm" required>
+                  <option value="">Select</option>
+                  <option value="admission">Admission related</option>
+                  <option value="application-status">Application status</option>
+                  <option value="technical">Technical issue</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="col-12">
+                <label class="form-label small fw-semibold">Message</label>
+                <textarea name="message" rows="4" class="form-control form-control-sm" placeholder="Type your message here..." required></textarea>
+              </div>
+
+              <div class="col-12 mt-2">
+                <button type="submit" class="btn btn-primary btn-sm px-4">
+                  Submit Message
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <p class="text-muted small mt-3 mb-0">
+            Note: This is a demo portal. In a real deployment, messages would be routed
+            to the official admission team via email or ticketing system.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Optional: Map / location placeholder -->
+<section class="py-4 bg-white border-top">
+  <div class="container">
+    <div class="row g-3 align-items-center">
+      <div class="col-md-6">
+        <h5 class="fw-bold mb-2">Locate the campus</h5>
+        <p class="text-muted small mb-0">
+          The campus is easily accessible by road and public transport. For exact directions,
+          you can search the institute name on Google Maps or your preferred map application.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <div class="map-placeholder text-center">
+          <i class="fa-solid fa-map-location-dot mb-2" style="font-size: 1.8rem;"></i>
+          <p class="text-muted small mb-0">Map integration placeholder (Google Maps / OpenStreetMap)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include("footer.ejs") %>

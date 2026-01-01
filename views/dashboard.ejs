@@ -1,0 +1,173 @@
+<%- include("header.ejs") %>
+
+<!-- Change Password Modal Form -->
+<form action="/Change_password" method="post">
+  <div class="modal fade" id="add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Old Password</label>
+            <input type="password" class="form-control" placeholder="Enter Old password" name="old_password" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">New Password</label>
+            <input type="password" class="form-control mb-2" placeholder="Enter New Password" name="new_password" id="myInput" required>
+            <div class="form-check mt-1">
+              <input class="form-check-input" type="checkbox" onclick="myFunction()" id="showPassCheck">
+              <label class="form-check-label" for="showPassCheck">
+                Show Password
+              </label>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" placeholder="Enter Confirm Password" name="confirm_password" required>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Update Password</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- Hero Section -->
+<section class="dashboard-hero">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-md-7">
+        <p class="text-uppercase small fw-semibold text-warning mb-2">
+          Welcome back
+        </p>
+        <h1 class="display-5 fw-bold mb-3 text-white">
+          Hello, <span class="text-info"><%= user.name %></span> 👋
+        </h1>
+        <p class="lead text-light mb-4">
+          Manage your admissions, track application status, and register for your desired courses – all from one place.
+        </p>
+
+        <div class="d-flex flex-wrap gap-2">
+          <a href="/display" class="btn btn-light px-4">
+            My Applications
+          </a>
+          <a href="#courses-section" class="btn btn-outline-light px-4">
+            Browse Courses
+          </a>
+          <button class="btn btn-link text-decoration-none text-light" data-bs-toggle="modal" data-bs-target="#add">
+            Change Password
+          </button>
+        </div>
+      </div>
+
+      <div class="col-md-5 text-center">
+        <!-- Simple illustration style block -->
+        <div class="hero-illustration mx-auto">
+          <div class="hero-circle"></div>
+         <div class="hero-card shadow-sm">
+  <h6 class="mb-2 text-secondary">Quick Info</h6>
+  <p class="mb-1 text-dark">
+    <i class="fa-solid fa-user-graduate me-2 text-primary"></i>
+    Logged in as <b><%= user.email %></b>
+  </p>
+  <p class="mb-0 text-dark">
+    <i class="fa-solid fa-circle-check me-2 text-success"></i>
+    Secure student dashboard
+  </p>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Courses Section -->
+<section id="courses-section" class="py-5 courses-section">
+  <div class="container mb-4 text-center">
+    <h2 class="fw-bold mb-2">Available Courses</h2>
+    <p class="text-muted mb-4">
+      Choose a programme and start your admission process in just a few steps.
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="row g-4">
+      <% if (courses && courses.length > 0) { %>
+        <% courses.forEach(function(course) { %>
+          <div class="col-md-4">
+            <div class="card dashboard-course-card h-100 border-0 shadow-sm">
+              <div class="dashboard-course-image-wrapper">
+                <img class="card-img-top" src="assets/images/images (1).jpeg" alt="<%= course.name %>">
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mb-2"><%= course.name %></h5>
+                <p class="card-text text-muted small flex-grow-1">
+                  <%= course.description %>
+                </p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <span class="badge rounded-pill bg-primary-subtle text-primary-emphasis">
+                    Undergraduate
+                  </span>
+                  <% if (course._id === 'btech') { %>
+                    <a href="/coursebtech" class="btn btn-sm btn-primary">Register</a>
+                  <% } else if (course._id === 'bca') { %>
+                    <a href="/coursebca" class="btn btn-sm btn-primary">Register</a>
+                  <% } else if (course._id === 'mca') { %>
+                    <a href="/coursemca" class="btn btn-sm btn-primary">Register</a>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <div class="col-12 text-center">
+          <p class="text-muted">No courses available right now. Please check back later.</p>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<!-- Optional: Small info strip -->
+<section class="py-4 border-top small-info-strip">
+  <div class="container">
+    <div class="row text-center text-md-start g-3">
+      <div class="col-md-4">
+        <p class="mb-1 fw-semibold">
+          <i class="fa-solid fa-file-lines me-2 text-primary"></i>
+          Easy Online Application
+        </p>
+        <p class="text-muted small mb-0">Fill and submit forms in a few clicks from your dashboard.</p>
+      </div>
+      <div class="col-md-4">
+        <p class="mb-1 fw-semibold">
+          <i class="fa-solid fa-bell me-2 text-warning"></i>
+          Track Status
+        </p>
+        <p class="text-muted small mb-0">Stay updated with pending, approved or rejected applications.</p>
+      </div>
+      <div class="col-md-4">
+        <p class="mb-1 fw-semibold">
+          <i class="fa-solid fa-shield-halved me-2 text-success"></i>
+          Secure & Private
+        </p>
+        <p class="text-muted small mb-0">Your data is kept safe with authentication and secure APIs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include("footer.ejs") %>

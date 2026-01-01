@@ -1,0 +1,52 @@
+<%- include('../header.ejs') %>
+
+<div class="container py-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>Courses</h3>
+    <a class="btn btn-outline-secondary" href="/admin/dashboard">Dashboard</a>
+  </div>
+
+  <% if (typeof flash !== 'undefined') { } %>
+  <!-- Add Course Form -->
+  <div class="card mb-4 p-3">
+    <form action="/admin/courses/add" method="post" class="row g-2">
+      <div class="col-md-3"><input name="name" required placeholder="Course name" class="form-control"></div>
+      <div class="col-md-2"><input name="branch" required placeholder="Branch" class="form-control"></div>
+      <div class="col-md-2"><input name="college" required placeholder="College" class="form-control"></div>
+      <div class="col-md-2"><input name="duration" placeholder="Duration (e.g. 3 Years)" class="form-control"></div>
+      <div class="col-md-1"><input name="seats" placeholder="Seats" class="form-control"></div>
+      <div class="col-md-2"><button class="btn btn-primary" type="submit">Add Course</button></div>
+    </form>
+  </div>
+
+  <!-- Courses Table -->
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <thead><tr><th>#</th><th>Name</th><th>Branch</th><th>College</th><th>Duration</th><th>Seats</th><th>Active</th><th>Actions</th></tr></thead>
+      <tbody>
+        <% courses.forEach((c,i) => { %>
+          <tr>
+            <td><%= i+1 %></td>
+            <td><%= c.name %></td>
+            <td><%= c.branch %></td>
+            <td><%= c.college %></td>
+            <td><%= c.duration %></td>
+            <td><%= c.seats %></td>
+            <td><%= c.active ? 'Yes' : 'No' %></td>
+            <td>
+              <form action="/admin/courses/<%= c._id %>/toggle" method="post" style="display:inline">
+                <button class="btn btn-sm btn-warning" type="submit"><%= c.active ? 'Deactivate' : 'Activate' %></button>
+              </form>
+              <form action="/admin/courses/<%= c._id %>/delete" method="post" style="display:inline" onsubmit="return confirm('Delete course? This is irreversible')">
+                <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<%- include('../footer.ejs') %>

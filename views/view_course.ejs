@@ -1,0 +1,68 @@
+<%- include("header.ejs") %>
+
+<div class="container mt-5 pt-4">
+  <div class="dash-title text-center mb-4">
+    <h1 class="py-3 px-2 text-white" style="background-color:#35b9dd; border-radius: 8px;">
+      Application Details
+    </h1>
+  </div>
+
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <h5 class="card-title mb-3">Personal Information</h5>
+      <p><b>Name:</b> <%= app.name %></p>
+      <p><b>Email:</b> <%= app.email %></p>
+      <p><b>Mobile No:</b> <%= app.number %></p>
+      <p><b>DOB:</b> <%= app.dob ? app.dob.toDateString() : '' %></p>
+      <p><b>Gender:</b> <%= app.gender %></p>
+      <p><b>Address:</b> <%= app.address %></p>
+    </div>
+  </div>
+
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <h5 class="card-title mb-3">Course Information</h5>
+      <p>
+        <b>Course:</b>
+        <% if (app.course) { %>
+          <%= app.course.name %>
+        <% } else { %>
+          -
+        <% } %>
+      </p>
+      <p>
+        <b>College:</b>
+        <% if (app.course) { %>
+          <%= app.course.college %>
+        <% } else { %>
+          <%= app.college %>
+        <% } %>
+      </p>
+      <p><b>Branch:</b> <%= app.branch %></p>
+    </div>
+  </div>
+
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <h5 class="card-title mb-3">Status</h5>
+      <% let statusClass = 'bg-warning text-dark'; %>
+      <% if (app.status === 'approved') { statusClass = 'bg-success'; } %>
+      <% if (app.status === 'rejected') { statusClass = 'bg-danger'; } %>
+      <p>
+        <b>Status:</b>
+        <span class="badge <%= statusClass %> text-uppercase">
+          <%= app.status %>
+        </span>
+      </p>
+      <p><b>Comment:</b> <%= app.comment || 'Wait' %></p>
+      <p><b>Applied On:</b> <%= app.createdAt.toDateString() %></p>
+    </div>
+  </div>
+
+  <div class="text-center mb-5">
+    <a href="/display" class="btn btn-outline-primary me-2">Back to My Applications</a>
+    <a href="/dashboard" class="btn btn-outline-secondary">Back to Dashboard</a>
+  </div>
+</div>
+
+<%- include("footer.ejs") %>

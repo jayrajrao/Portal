@@ -1,0 +1,90 @@
+<%- include("header.ejs") %>
+
+<div class="container viewcourse mt-5 pt-4">
+  <div class="dash-title text-center mb-4">
+    <h1 class="py-3 px-2 text-white" style="background-color:#35b9dd; border-radius: 8px;">
+      My Applications
+    </h1>
+    <p class="mt-2 text-muted">
+      Track your submitted admission applications, status and remarks.
+    </p>
+  </div>
+
+  <% if (applications && applications.length > 0) { %>
+    <div class="table-responsive shadow-sm rounded-3">
+      <table class="table table-bordered table-striped mb-0 align-middle">
+        <thead class="text-center" style="background-color: #35b9dd; color: #fff;">
+          <tr class="trb thead">
+            <th>S. No.</th>
+            <th>Name</th>
+            <th>College</th>
+            <th>Course</th>
+            <th>Branch</th>
+            <th>Status</th>
+            <th>Comment</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% applications.forEach(function(app, index) { %>
+            <tr class="text-center" style="text-transform:uppercase;">
+              <td><%= index + 1 %></td>
+              <td><%= app.name %></td>
+              <td>
+                <% if (app.course && app.course.college) { %>
+                  <%= app.course.college %>
+                <% } else { %>
+                  <%= app.college %>
+                <% } %>
+              </td>
+              <td>
+                <% if (app.course && app.course.name) { %>
+                  <%= app.course.name %>
+                <% } else { %>
+                  -
+                <% } %>
+              </td>
+              <td><%= app.branch %></td>
+              <td>
+                <% let statusClass = 'bg-warning text-dark'; %>
+                <% if (app.status === 'approved') { statusClass = 'bg-success'; } %>
+                <% if (app.status === 'rejected') { statusClass = 'bg-danger'; } %>
+                <span class="badge <%= statusClass %> text-uppercase">
+                  <%= app.status %>
+                </span>
+              </td>
+              <td><%= app.comment || 'Wait' %></td>
+              <td>
+                <a href="/viewcourse/<%= app._id %>" 
+                   class="btn btn-sm btn-outline-primary action-btn me-1" 
+                   title="View">
+                  <i class="fa-solid fa-eye"></i>
+                </a>
+
+                <% if (app.status === 'pending') { %>
+                  <a href="/editcourse/<%= app._id %>" 
+                     class="btn btn-sm btn-outline-secondary action-btn" 
+                     title="Edit">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                  </a>
+                <% } %>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  <% } else { %>
+    <div class="alert alert-info mt-4">
+      You have not submitted any applications yet.
+    </div>
+  <% } %>
+
+  <div class="my-4 text-center">
+    <a href="/dashboard" class="btn btn-outline-primary px-4">
+      Back To Dashboard
+    </a>
+  </div>
+</div>
+
+<%- include("footer.ejs") %>
